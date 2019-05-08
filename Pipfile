@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[[source]]
+name = "casa"
+url = "https://casa-pip.nrao.edu:443/repository/pypi-group/simple"
+verify_ssl = true
+
+[dev-packages]
+ipython = "*"
+jupyter = "*"
+matplotlib = "*"
+
+[packages]
+casatools = "*"
+casatasks = "*"
+
+[requires]
+python_version = "3.6"
