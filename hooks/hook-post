@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# fix wrong dylib links
+SITEPACKAGES=$(pip show casatools | grep Location | sed 's/^Location: \(.*\)$/\1/g')
+CASATOOLSLIB=$SITEPACKAGES/casatools/__CASAC__/lib
+
+for f in $CASATOOLSLIB/*.dylib; do
+    echo $f
+    install_name_tool -change /opt/casa/02/lib/libiconv.2.dylib @rpath/libiconv.2.dylib ${f}
+    install_name_tool -change /opt/casa/02/lib/libgcc/libgcc_s.1.dylib @rpath/libgcc_s.1.dylib ${f}
+done
+
+# matplotlib backend settings
+echo 'backend: TkAgg' > $MATPLOTLIBRC/matplotlibrc
