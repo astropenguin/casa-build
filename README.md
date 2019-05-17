@@ -1,6 +1,17 @@
 # casa6-test
 :house: Python environment for testing modular CASA 6 installation
 
+## Requirements
+
+- pipenv
+- pyenv
+
+You can install them by [Homebrew](https://brew.sh):
+
+```bash
+$ brew install pyenv pipenv
+```
+
 ## Installation
 
 ```shell
